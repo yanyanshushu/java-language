@@ -10,7 +10,7 @@ public class FileTest {
 
 
 
-    public Set<String> readSetFromFile(String name){
+    public static ArrayList<String> readSetFromFile(String name){
         ArrayList<String> arrayList = new ArrayList<>();
         try {
             FileReader fr = new FileReader(name);
@@ -25,6 +25,6 @@ public class FileTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return arrayList;
     }
 }

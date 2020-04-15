@@ -11,7 +11,6 @@ public class HashMapTest {
         HashMapThread thread2 = new HashMapThread();
         HashMapThread thread3 = new HashMapThread();
         HashMapThread thread4 = new HashMapThread();
-        System.out.println(thread0.hashCode());
         thread0.start();
         thread1.start();
         thread2.start();
