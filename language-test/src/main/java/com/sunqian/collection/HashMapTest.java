@@ -2,10 +2,23 @@ package com.sunqian.collection;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class HashMapTest {
     public static void main(String[] args) {
+//        TheadTest();
+
+        Map<String,String> map=new TreeMap<>();
+        map.put("1","1");
+        map.put("3","3");
+        map.put("2","2");
+        map.put("4","4");
+        map.put("5","5");
+        System.out.println(map.toString());
+    }
+
+    private static void TheadTest() {
         HashMapThread thread0 = new HashMapThread();
         HashMapThread thread1 = new HashMapThread();
         HashMapThread thread2 = new HashMapThread();

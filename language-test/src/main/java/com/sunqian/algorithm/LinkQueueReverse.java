@@ -2,6 +2,11 @@ package com.sunqian.algorithm;
 
 public class LinkQueueReverse {
 
+
+    /**
+     * 下边实现一个链表逆序。
+     * @param args
+     */
     public static void main(String[] args) {
         int length=10;
         LNode head=null;
