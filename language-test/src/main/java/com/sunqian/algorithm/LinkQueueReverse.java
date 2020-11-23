@@ -4,11 +4,11 @@ public class LinkQueueReverse {
 
 
     /**
-     * 下边实现一个链表逆序。
+     * 下边实现一个单链表逆序。
      * @param args
      */
     public static void main(String[] args) {
-        int length=10;
+        int length=2;
         LNode head=null;
         LNode pre=null;
 
@@ -40,7 +40,7 @@ public class LinkQueueReverse {
         pre=head;
         cur=head;
         next=cur.next;
-        while (next!=null){
+        while (next!=null){//1,先cur指向next,2再next指向下一个，3然后cur的next为pre,4,最后pre=cur
             cur=next;
             next=cur.next;
             cur.next=pre;
@@ -59,7 +59,7 @@ public class LinkQueueReverse {
         while (cur!=null){
             System.out.print(cur.data);
             if(cur.next!=null){
-                System.out.print("->");
+                System.out.print("-");
                 cur=cur.next;
             }else {
                 break;

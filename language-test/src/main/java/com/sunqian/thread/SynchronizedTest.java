@@ -1,4 +1,4 @@
-package com.sunqian.thread_lock;
+package com.sunqian.thread;
 
 public class SynchronizedTest {
 

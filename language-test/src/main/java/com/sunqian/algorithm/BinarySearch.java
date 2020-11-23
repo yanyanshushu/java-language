@@ -24,7 +24,8 @@ public class BinarySearch {
             }else if(nums[mid]>toSearchNum){
                 high=mid-1;
             }else {
-                high=high-1;
+//                high=high-1;
+                break;//相等直接跳出
             }
         }
 
