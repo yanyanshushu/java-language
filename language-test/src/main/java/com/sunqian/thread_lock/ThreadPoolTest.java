@@ -1,4 +1,4 @@
-package com.sunqian.work;
+package com.sunqian.thread_lock;
 
 
 import java.util.concurrent.Callable;
