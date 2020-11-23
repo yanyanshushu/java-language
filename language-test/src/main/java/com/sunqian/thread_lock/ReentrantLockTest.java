@@ -4,6 +4,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *      测试过，对单个线程ReentrantLock是可重入的，多个线程共用的话，不可重入；
+ *
+ *      主线程，和新起的线程，共用一把锁，不能同时获得。而线程内部可以多次获得
  */
 public class ReentrantLockTest {
 
@@ -26,9 +28,10 @@ public class ReentrantLockTest {
             }
         }
 
-
-        Thread  thread =new Thread(new Task(lock));
-        thread.start();
+        for (int i=0;i<100;i++){
+            Thread  thread =new Thread(new Task(lock));
+            thread.start();
+        }
     }
 }
 

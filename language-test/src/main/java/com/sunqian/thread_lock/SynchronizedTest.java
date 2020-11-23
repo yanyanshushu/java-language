@@ -2,6 +2,9 @@ package com.sunqian.thread_lock;
 
 public class SynchronizedTest {
 
+    /**
+     * 测试synchronized关键字，对象锁
+     */
     public static void main(String[] args) {
         SyncThread syncThread = new SyncThread();
         Thread thread1 = new Thread(syncThread, "SyncThread1");
