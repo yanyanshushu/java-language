@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 线程池相关操作测试类
+ * 线程池相关操作测试类,使用Executors的静态方法
  */
 public class ThreadPoolTest {
 
