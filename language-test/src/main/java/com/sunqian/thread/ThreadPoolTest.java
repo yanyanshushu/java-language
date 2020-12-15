@@ -26,7 +26,6 @@ public class ThreadPoolTest {
 
 class TaskOne implements Runnable{
 
-    @Override
     public void run() {
         System.out.println("我是一个runnable任务");
     }
@@ -34,7 +33,6 @@ class TaskOne implements Runnable{
 
 class TaskTwo implements Callable{
 
-    @Override
     public Boolean call() throws Exception {
         System.out.println("我是一个callable任务");
         return true;

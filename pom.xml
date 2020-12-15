@@ -11,7 +11,6 @@
     <modules>
         <module>kafka-client-test</module>
         <module>language-test</module>
-        <module>dubbo-test</module>
         <module>spring-code</module>
     </modules>
 
