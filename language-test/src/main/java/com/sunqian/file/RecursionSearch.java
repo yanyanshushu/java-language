@@ -66,19 +66,19 @@ public class RecursionSearch {
                     }else{
                         count++;
                         String path=file.getAbsolutePath();
-                        if(!path.endsWith(".java") && !path.endsWith(".xml")){
+                        if(!path.endsWith("OrderItemPromoInfoMapper.xml")){
                             continue;
                         }
 
-                        StringBuilder sb = new StringBuilder();
-                        byte[] bytes = new byte[1024];
-                        fis = new FileInputStream(file);
-                        int len = 0;
-                        while((len = fis.read(bytes)) != -1){
-                            sb.append(new String(bytes, 0, len));
-                        }
-                        fis.close();
-                        if(sb.indexOf("ProductId") >= 0 ||sb.indexOf("productId") >= 0 ||sb.indexOf("productid") >= 0){
+//                        StringBuilder sb = new StringBuilder();
+//                        byte[] bytes = new byte[1024];
+//                        fis = new FileInputStream(file);
+//                        int len = 0;
+//                        while((len = fis.read(bytes)) != -1){
+//                            sb.append(new String(bytes, 0, len));
+//                        }
+//                        fis.close();
+//                        if(sb.indexOf("ProductId") >= 0 ||sb.indexOf("productId") >= 0 ||sb.indexOf("productid") >= 0){
                             System.out.println(path);
                             path=path.replace("D:\\product_id\\","");
                             int endIndex=path.indexOf("\\",path.indexOf("\\")+ 1);
@@ -87,7 +87,7 @@ public class RecursionSearch {
                                 resultSet.add(path);
                                 System.out.println(path);
                             }
-                        }
+//                        }
                     }
                 }
             }catch(Exception e){
