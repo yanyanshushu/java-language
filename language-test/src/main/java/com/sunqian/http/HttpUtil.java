@@ -1,6 +1,8 @@
 package com.sunqian.http;
 
-import lombok.extern.slf4j.Slf4j;
+
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -14,8 +16,9 @@ import java.util.Map;
  * @author sunqian
  * @date 2018年5月11日 上午10:32:28
  */
-@Slf4j
 public class HttpUtil {
+
+	static Logger log= LoggerFactory.getLogger(HttpUtil.class);
 
 	public static String postRequestByJson(String path, String paramsJsonString) {
 		String result = "";
@@ -86,7 +89,7 @@ public class HttpUtil {
 			for(String key:paramsMap.keySet()) {
 				params.append(key).append("=").append(paramsMap.get(key)).append("&");
 			}
-			log.info("消息发送接口调用参数：{}",params.toString());
+			log.debug("消息发送接口调用参数：{}",params.toString());
 			byte[] data = params.toString().getBytes(encoding);
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("POST");
@@ -181,7 +184,7 @@ public class HttpUtil {
 		json.put("clear_count", 20);
 		json.put("expire_count", 0);
 		String rst=postRequestByForm(url, json);
-		log.info(rst);
+		log.debug(rst);
 	}
 	
 	

@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kafka-client-test" />
-        <module name="spring-code" />
         <module name="language-test" />
       </profile>
     </annotationProcessing>
@@ -16,6 +15,7 @@
       <module name="dubbo-demo-provider" target="1.8" />
       <module name="dubbo-test" target="1.8" />
       <module name="kafka-client-test" target="1.8" />
+      <module name="spring-code" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
