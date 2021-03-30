@@ -1,15 +1,16 @@
-package com.sunqian.file;
+package com.sunqian;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.sunqian.http.HttpUtil;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Set;
 
-public class FileTest {
+public class JSONTest {
+
+    //一个post请求，拼参数脚本。
 
     public static void main(String[] args) {
         readSetFromFile("/Users/sunqian/test.txt");
@@ -46,12 +47,6 @@ public class FileTest {
                     cancelList.add(cancel);
 
                     JSONObject post=new JSONObject();
-                    //"isPresaleOrder": 0,
-                    //		"opNum": 80,
-                    //		"orderAssortingType": 0,
-                    //		"productId": 28499291,
-                    //		"productType": 0,
-                    //		"warehouseId": 22
                     post.put("isPresaleOrder",0);
                     post.put("opNum",params[1]);
                     post.put("orderAssortingType",0);
@@ -60,16 +55,15 @@ public class FileTest {
                     post.put("warehouseId",22);
                     postList.add(post);
                 }else {
-                    System.out.println(body.getString("orderId")+":"+body.toJSONString());
-                    System.out.println();
+                    callAndPrint(body);
 
 
                     preOrderId=params[3];
                     body=new JSONObject();
-                     cancelList=new JSONArray();
-                     postList=new JSONArray();
-                     body.put("orderId",params[3]);
-                     body.put("cancelList",cancelList);
+                    cancelList=new JSONArray();
+                    postList=new JSONArray();
+                    body.put("orderId",params[3]);
+                    body.put("cancelList",cancelList);
                     body.put("postList",postList);
                     body.put("requestId","42220852255_20210319161630");
                     body.put("token","order_2003");
@@ -80,12 +74,6 @@ public class FileTest {
                     cancelList.add(cancel);
 
                     JSONObject post=new JSONObject();
-                    //"isPresaleOrder": 0,
-                    //		"opNum": 80,
-                    //		"orderAssortingType": 0,
-                    //		"productId": 28499291,
-                    //		"productType": 0,
-                    //		"warehouseId": 22
                     post.put("isPresaleOrder",0);
                     post.put("opNum",params[1]);
                     post.put("orderAssortingType",0);
@@ -95,11 +83,20 @@ public class FileTest {
                     postList.add(post);
                 }
             }
-            System.out.println(body.getString("orderId")+":"+body.toJSONString());
+            callAndPrint(body);
+
             bf.close();
             fr.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    //调接口，并打印结果。
+    private static void callAndPrint(JSONObject body) {
+        System.out.println(body.getString("orderId") + ":" + body.toJSONString());
+        String path = "http://";
+        String result = HttpUtil.postRequestByJson(path, body.toJSONString());
+        System.out.println(result);
+        System.out.println();
     }
 }
