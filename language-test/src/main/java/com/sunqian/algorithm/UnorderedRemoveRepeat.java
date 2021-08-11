@@ -7,6 +7,11 @@ public class UnorderedRemoveRepeat {
     public static int[] before={2,4,5,12,45,34,99,34,23,12,4,1};
 
     public static void main(String[] args) {
+        LNode head=initQueue();
+        dubleCircleRemove(head);
+    }
+
+    private static LNode initQueue() {
         LNode head=null;
         LNode pre=null;
         for(int i=0;i<before.length;i++){
@@ -22,22 +27,27 @@ public class UnorderedRemoveRepeat {
         }
         System.out.print("链表初始化：");
         LinkQueueReverse.printLinkedQueue(head);
-
+        return head;
     }
 
     static LNode dubleCircleRemove(LNode head){
-        LNode outer=head,
-                pre=head,
-                inner=null;
-        while (outer!=null && outer.next!=null){
+        LNode outer=head,inner=null;
+        while (outer!=null ){
+            LNode pre=outer;
             inner=outer.next;
-            while (inner!=null && inner.next!=null){
+            while (inner!=null){
                 if(outer.data.equals(inner.data)){
-
+                    inner=inner.next;
+                    pre.next=inner;
+                }else {
+                    pre=inner;
+                    inner=inner.next;
                 }
             }
             outer=outer.next;
         }
+        System.out.print("去除重复项：");
+        LinkQueueReverse.printLinkedQueue(head);
         return head;
     }
 
