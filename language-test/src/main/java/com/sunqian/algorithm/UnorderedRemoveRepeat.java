@@ -4,7 +4,7 @@ public class UnorderedRemoveRepeat {
     /**
      * 一个无序链表，去除重复项
      */
-    public static int[] before={2,4,5,12,45,34,99,34,23,12,4,1};
+    public static int[] before={1,2};
 
     public static void main(String[] args) {
         LNode head=initQueue();
