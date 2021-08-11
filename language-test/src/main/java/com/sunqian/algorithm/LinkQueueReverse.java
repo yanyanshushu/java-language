@@ -8,7 +8,7 @@ public class LinkQueueReverse {
      * @param args
      */
     public static void main(String[] args) {
-        int length=2;
+        int length=20;
         LNode head=null;
         LNode pre=null;
 
