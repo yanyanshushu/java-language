@@ -59,7 +59,7 @@ public class CancelStockTest {
     //调接口，并打印结果。
     private static void callAndPrint(JSONObject body) {
         System.out.println(body.toJSONString());
-        String path = "http://10.5.24.125:8034/stock/cancel.json";
+        String path = "http://:8034/stock/cancel.json";
         String result = HttpUtil.postRequestByJson(path, body.toJSONString());
         System.out.println(result);
         System.out.println();

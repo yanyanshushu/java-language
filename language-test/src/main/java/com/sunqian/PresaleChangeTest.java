@@ -51,7 +51,7 @@ public class PresaleChangeTest {
     //调接口，并打印结果。
     private static void callAndPrint(JSONObject body) {
         System.out.println(body.getString("orderId") + ":" + body.toJSONString());
-        String path = "http://10.7.8.122:8089/warehouseService/change";
+        String path = "http://:8089/warehouseService/change";
         String result = HttpUtil.postRequestByJson(path, body.toJSONString());
         System.out.println(result);
         System.out.println();
