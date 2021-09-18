@@ -16,6 +16,9 @@ public class Test {
         People[] o2 = Arrays.copyOf(o1, o1.length);
         o1[0].setName("sunqianXXX");
         System.out.println(o2[0].getName());
+
+        Integer a=null;
+        System.out.println(a==null);
     }
 
 }
