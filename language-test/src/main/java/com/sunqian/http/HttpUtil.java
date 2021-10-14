@@ -144,8 +144,8 @@ public class HttpUtil {
 		try {
 			URL url=new URL(urlPath);
             HttpURLConnection urlConnection=(HttpURLConnection) url.openConnection();
-            urlConnection.setConnectTimeout(5000);
-            urlConnection.setReadTimeout(5000);
+            urlConnection.setConnectTimeout(600000);
+            urlConnection.setReadTimeout(600000);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
             int code=urlConnection.getResponseCode();
