@@ -16,9 +16,9 @@ public class GitCloneCommand {
 
     public static void main(String[] args) {
         //传入组名，通过git api 获得该组下的项目地址
-        List<String> urls = getGitHttpUrl("xa/kefu");
+        List<String> urls = getGitHttpUrl("ly_promise");
         //clone到本机那个目录下
-        String cloneToDir = "/Users/sunqian/IdeaProjects/xakefu";
+        String cloneToDir = "/Users/sunqian/IdeaProjects/promise";
         for (String url : urls) {
             System.out.println("开始克隆第【" + (urls.indexOf(url) + 1) + "】个项目");
             gitClone(url, cloneToDir);
